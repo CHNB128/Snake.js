@@ -5,4 +5,5 @@ deploy:
 	# git remote add origin git@github.com:CHNB128/Snake.js.git
 	git add -A
 	git commit -m "deploy"
-	git push --set-upstream origin github-page
+	# git push --set-upstream origin gh-pages
+	git push
