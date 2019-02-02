@@ -1,11 +1,12 @@
 import Vector2 from './vector2'
 
 function Snake() {
-  this.body = []
+  this.body = null
   this.direction = new Vector2(1, 0)
   this.color = 0x70ff0b
 }
 Snake.prototype.init = function() {
+  this.body = []
   for (let i = 0; i < 3; i++) {
     this.body.push(new Vector2(i, 0))
   }
