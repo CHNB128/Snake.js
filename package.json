@@ -1,12 +1,11 @@
 {
   "name": "Snake",
   "version": "1.0.0",
-  "description": "asd",
-  "main": "asd",
-  "repository": "asd",
-  "author": "asd",
-  "license": "asd",
-  "private": null,
+  "description": "",
+  "main": "./src/index.js",
+  "repository": "",
+  "author": "Drake Aren Nelson",
+  "private": false,
   "dependencies": {
     "css-loader": "^2.1.0",
     "hammerjs": "^2.0.8",
