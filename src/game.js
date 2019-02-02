@@ -26,6 +26,37 @@ Game.prototype.bindKeyborad = function() {
 
   const all = [left, up, right, down]
 
+  hammer.on('swipe', e => {
+    console.log(e.direction)
+
+    switch (e.direction) {
+      case 2:
+        if (this.snake.direction.x != 1) {
+          this.snake.direction.x = -1
+          this.snake.direction.y = 0
+        }
+        break
+      case 4:
+        if (this.snake.direction.x != -1) {
+          this.snake.direction.x = 1
+          this.snake.direction.y = 0
+        }
+        break
+      case 8:
+        if (this.snake.direction.y != 1) {
+          this.snake.direction.y = -1
+          this.snake.direction.x = 0
+        }
+        break
+      case 16:
+        if (this.snake.direction.y != -1) {
+          this.snake.direction.y = 1
+          this.snake.direction.x = 0
+        }
+        break
+    }
+  })
+
   left.press = () => {
     // if (all.filter(e => e.isDown).length != 0) {
     //   return

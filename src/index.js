@@ -1,6 +1,7 @@
-import './loader'
-
 import * as PIXI from 'pixi.js'
+import Hammer from 'hammerjs'
+
+import './loader'
 import './array'
 import './main.css'
 
@@ -27,6 +28,9 @@ window.app = new PIXI.Application(window.size.x, window.size.y)
 window.graphics = new PIXI.Graphics()
 window.blockSize = 15
 
+window.hammer = new Hammer(app.view)
+hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL })
+
 window.game = new Game()
 
 app.stage.addChild(graphics)
@@ -47,7 +51,7 @@ window.drawRectangle = function(position, size, color) {
 }
 
 window.addEventListener('resize', function() {
-  windowSize = getWindowSize()
+  window.size = getWindowSize()
   app.renderer.resize(window.innerWidth, window.innerHeight)
 })
 
