@@ -24,13 +24,13 @@ function getWindowSize() {
 
 window.size = getWindowSize()
 window.app = new PIXI.Application(window.size.x, window.size.y)
+// Hammer
+window.hammer = new Hammer(app.view)
+hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL })
+// UI
 window.ui = new UI()
 window.graphics = new PIXI.Graphics()
 window.blockSize = 15
-
-window.hammer = new Hammer(app.view)
-hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL })
-
 window.game = new Game()
 
 app.stage.addChild(graphics)

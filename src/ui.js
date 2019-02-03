@@ -53,11 +53,16 @@ UI.prototype.initDeadScreen = function() {
 }
 UI.prototype.showDeadScreen = function() {
   this.deadScreen.style.display = 'block'
-  app.view.onclick = function() {
+  document.onkeypress = function(e) {
     game.start()
     ui.hideDeadScreen()
-    app.view.onclick = null
+    document.onkeypress = null
   }
+  hammer.on('tap', () => {
+    game.start()
+    ui.hideDeadScreen()
+    hammer.off('tap')
+  })
 }
 UI.prototype.hideDeadScreen = function() {
   this.deadScreen.style.display = 'none'
