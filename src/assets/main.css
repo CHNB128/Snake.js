@@ -37,3 +37,11 @@ html {
 .hide {
   display: none;
 }
+
+#repo-link {
+  color: #fff;
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  font-size: 1vw;
+}

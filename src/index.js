@@ -3,7 +3,7 @@ import Hammer from 'hammerjs'
 
 import './loader'
 import './array'
-import './main.css'
+import './assets/main.css'
 
 import UI from './ui'
 import Loader from './loader'
