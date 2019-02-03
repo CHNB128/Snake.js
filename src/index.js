@@ -10,7 +10,6 @@ import Loader from './loader'
 import Game from './game'
 
 const loader = new Loader()
-window.ui = new UI()
 
 function getWindowSize() {
   let w = window
@@ -25,6 +24,7 @@ function getWindowSize() {
 
 window.size = getWindowSize()
 window.app = new PIXI.Application(window.size.x, window.size.y)
+window.ui = new UI()
 window.graphics = new PIXI.Graphics()
 window.blockSize = 15
 

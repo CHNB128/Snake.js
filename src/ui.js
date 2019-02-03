@@ -49,14 +49,15 @@ UI.prototype.initDeadScreen = function() {
   this.deadScreen = document.createElement('div')
   this.deadScreen.id = 'dead-screen'
   this.deadScreen.innerHTML = 'DEAD'
-  this.deadScreen.onclick = function() {
-    game.start()
-    ui.hideDeadScreen()
-  }
   this.element.appendChild(this.deadScreen)
 }
 UI.prototype.showDeadScreen = function() {
   this.deadScreen.style.display = 'block'
+  app.view.onclick = function() {
+    game.start()
+    ui.hideDeadScreen()
+    app.view.onclick = null
+  }
 }
 UI.prototype.hideDeadScreen = function() {
   this.deadScreen.style.display = 'none'
