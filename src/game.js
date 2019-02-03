@@ -20,32 +20,18 @@ Game.prototype.reset = function() {
 }
 Game.prototype.bindKeyborad = function() {
   hammer.on('swipe', e => {
-    console.log(e.direction)
-
     switch (e.direction) {
       case 2: // left
-        if (this.snake.direction.x != 1) {
-          this.snake.direction.x = -1
-          this.snake.direction.y = 0
-        }
+        this.snake.direction = 'left'
         break
       case 4: // right
-        if (this.snake.direction.x != -1) {
-          this.snake.direction.x = 1
-          this.snake.direction.y = 0
-        }
+        this.snake.direction = 'right'
         break
       case 8: // up
-        if (this.snake.direction.y != 1) {
-          this.snake.direction.y = -1
-          this.snake.direction.x = 0
-        }
+        this.snake.direction = 'up'
         break
       case 16: // down
-        if (this.snake.direction.y != -1) {
-          this.snake.direction.y = 1
-          this.snake.direction.x = 0
-        }
+        this.snake.direction = 'down'
         break
     }
   })
@@ -93,7 +79,7 @@ Game.prototype.start = function() {
       this.snake.increaseSize()
     }
 
-    if (this.score / this.obstacles.length == 5) {
+    if (this.score / this.obstacles.length == 3) {
       let newObstacle = new Obstacle()
       this.createObject(newObstacle)
       this.obstacles.push(newObstacle)
