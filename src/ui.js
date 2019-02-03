@@ -13,6 +13,14 @@ function UI() {
   this.deadScreen = null
   this.initDeadScreen()
 
+  let repoLink = document.createElement('div')
+  repoLink.innerHTML = 'GitHub'
+  repoLink.id = 'repo-link'
+  repoLink.onclick = function() {
+    window.location = 'https://github.com/CHNB128/Snake.js'
+  }
+  this.element.appendChild(repoLink)
+
   this.hide()
   document.body.appendChild(this.element)
 }
