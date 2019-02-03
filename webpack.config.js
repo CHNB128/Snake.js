@@ -16,5 +16,13 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin()]
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Snake.js',
+      minify: true,
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      }
+    })
+  ]
 }
