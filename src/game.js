@@ -1,8 +1,9 @@
 import Snake from './snake'
 import Food from './food'
 import Obstacle from './obstacle'
-import keyboard from './keyboard'
 import Vector2 from './vector2'
+
+import Mousetrap from 'mousetrap'
 
 function Game() {
   this.snake = new Snake()
@@ -16,39 +17,31 @@ Game.prototype.reset = function() {
   this.food.position = new Vector2(-5, -5)
   this.obstacles = []
   this.score = 0
-  this.snake.init()
 }
 Game.prototype.bindKeyborad = function() {
-  const left = keyboard('ArrowLeft')
-  const up = keyboard('ArrowUp')
-  const right = keyboard('ArrowRight')
-  const down = keyboard('ArrowDown')
-
-  const all = [left, up, right, down]
-
   hammer.on('swipe', e => {
     console.log(e.direction)
 
     switch (e.direction) {
-      case 2:
+      case 2: // left
         if (this.snake.direction.x != 1) {
           this.snake.direction.x = -1
           this.snake.direction.y = 0
         }
         break
-      case 4:
+      case 4: // right
         if (this.snake.direction.x != -1) {
           this.snake.direction.x = 1
           this.snake.direction.y = 0
         }
         break
-      case 8:
+      case 8: // up
         if (this.snake.direction.y != 1) {
           this.snake.direction.y = -1
           this.snake.direction.x = 0
         }
         break
-      case 16:
+      case 16: // down
         if (this.snake.direction.y != -1) {
           this.snake.direction.y = 1
           this.snake.direction.x = 0
@@ -57,42 +50,10 @@ Game.prototype.bindKeyborad = function() {
     }
   })
 
-  left.press = () => {
-    // if (all.filter(e => e.isDown).length != 0) {
-    //   return
-    // }
-    if (this.snake.direction.x != 1) {
-      this.snake.direction.x = -1
-      this.snake.direction.y = 0
-    }
-  }
-  right.press = () => {
-    // if (all.filter(e => e.isDown).length != 0) {
-    //   return
-    // }
-    if (this.snake.direction.x != -1) {
-      this.snake.direction.x = 1
-      this.snake.direction.y = 0
-    }
-  }
-  up.press = () => {
-    // if (all.filter(e => e.isDown).length != 0) {
-    //   return
-    // }
-    if (this.snake.direction.y != 1) {
-      this.snake.direction.y = -1
-      this.snake.direction.x = 0
-    }
-  }
-  down.press = () => {
-    // if (all.filter(e => e.isDown).length != 0) {
-    //   return
-    // }
-    if (this.snake.direction.y != -1) {
-      this.snake.direction.y = 1
-      this.snake.direction.x = 0
-    }
-  }
+  Mousetrap.bind('up', () => (this.snake.direction = 'up'))
+  Mousetrap.bind('down', () => (this.snake.direction = 'down'))
+  Mousetrap.bind('left', () => (this.snake.direction = 'left'))
+  Mousetrap.bind('right', () => (this.snake.direction = 'right'))
 }
 Game.prototype.displayScore = function() {
   this.scoreElement.innerText = this.score

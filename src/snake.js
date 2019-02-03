@@ -16,11 +16,40 @@ Snake.prototype.draw = function() {
     drawRectangle(e, new Vector2(blockSize, blockSize), this.color)
   })
 }
-Snake.prototype.update = function() {
+  applyDirection() {
+    switch (this.direction) {
+      case 'up':
+        if (this.vectorDirection.y != 1) {
+          this.vectorDirection.y = -1
+          this.vectorDirection.x = 0
+        }
+        break
+      case 'down':
+        if (this.vectorDirection.y != -1) {
+          this.vectorDirection.y = 1
+          this.vectorDirection.x = 0
+        }
+        break
+      case 'left':
+        if (this.vectorDirection.x != 1) {
+          this.vectorDirection.x = -1
+          this.vectorDirection.y = 0
+        }
+        break
+      case 'right':
+        if (this.vectorDirection.x != -1) {
+          this.vectorDirection.x = 1
+          this.vectorDirection.y = 0
+        }
+        break
+    }
+  }
+
+  moveHead() {
   let last = this.body.pop()
   let first = this.body[0]
-  last.x = first.x + this.direction.x
-  last.y = first.y + this.direction.y
+    last.x = first.x + this.vectorDirection.x
+    last.y = first.y + this.vectorDirection.y
 
   // Return snake to the fild if it move away
   if (last.x > window.size.x / blockSize) {
@@ -38,7 +67,11 @@ Snake.prototype.update = function() {
 
   this.body.unshift(last)
 }
-Snake.prototype.increaseSize = function() {
+
+  update() {
+    this.applyDirection()
+    this.moveHead()
+  }
   this.body.push(new Vector2(0, 0))
 }
 
