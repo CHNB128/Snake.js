@@ -2522,6 +2522,11 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   dependencies:
     minimist "0.0.8"
 
+mousetrap@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/mousetrap/-/mousetrap-1.6.2.tgz#caadd9cf886db0986fb2fee59a82f6bd37527587"
+  integrity sha512-jDjhi7wlHwdO6q6DS7YRmSHcuI+RVxadBkLt3KHrhd3C2b+w5pKefg3oj5beTcHZyVFA9Aksf+yEE1y5jxUjVA==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -3828,11 +3833,6 @@ supports-color@^6.1.0:
   integrity sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==
   dependencies:
     has-flag "^3.0.0"
-
-synaptic@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/synaptic/-/synaptic-1.1.4.tgz#b058163e2e86a3f86fc964ab792496c0642c13d7"
-  integrity sha512-JFtU98VDFI0uBTowgySo+UUEkc7rSVHaxx9D6dR5BK6u81G7uAxcp32Gi2SHciLpFbvJVd1Pfz7aqSNQO4EH9Q==
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
