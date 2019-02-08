@@ -107,7 +107,7 @@ Game.prototype.start = function() {
     this.obstacles.map(e => e.draw())
     this.food.draw()
     this.snake.draw()
-  }, 30)
+  }, 45)
 }
 
 export default Game
