@@ -5,6 +5,10 @@ import Vector2 from './vector2'
 
 import Mousetrap from 'mousetrap'
 
+function randomRange(min, max) {
+  return min + (Math.random() * ((max - min) + 1))
+}
+
 function Game() {
   this.snake = new Snake()
   this.food = new Food()
@@ -48,8 +52,8 @@ Game.prototype.createObject = function(object) {
   let position
   do {
     position = new Vector2(
-      Math.round(Math.random() * (window.size.x / blockSize)),
-      Math.round(Math.random() * (window.size.y / blockSize))
+      Math.floor(randomRange(0, window.size.x / blockSize)),
+      Math.floor(randomRange(0, window.size.y / blockSize))
     )
   } while (
     this.obstacles.filter(e => e.position.equal(position)).length != 0 &&
