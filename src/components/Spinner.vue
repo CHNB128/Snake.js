@@ -1,12 +1,14 @@
-#loader {
-  position: absolute;
+<template>
+  <div class="spinner"></div>
+</template>
+
+<style scoped>
+.spinner {
   animation: spin 1s linear infinite;
   height: 10px;
   width: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -5px;
+  text-transform: uppercase;
+  font-family: 'Lato';
 }
 
 @keyframes spin {
@@ -135,7 +137,7 @@
 
 /* DEMO */
 
-html {
+/* html {
   height: 100%;
 }
 
@@ -150,6 +152,6 @@ h1 {
   bottom: 50px;
   width: 100%;
   text-align: center;
-  text-transform: uppercase;
-  font-family: 'Lato';
-}
+
+} */
+</style>

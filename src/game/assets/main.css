@@ -1,0 +1,26 @@
+
+#ui {
+}
+
+#score-block {
+  display: inline-flex;
+  color: #ff7400;
+}
+
+#dead-screen {
+  color: wheat;
+  font-size: 5vw;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+#repo-link {
+  color: #fff;
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  font-size: 1vw;
+}
