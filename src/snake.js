@@ -57,7 +57,7 @@ export default class Snake {
     last.y = first.y + this.vectorDirection.y
 
     // Return snake to the fild if it move away
-    if (last.x > window.size.x / blockSize - 1) {
+    if (last.x > window.size.x / blockSize) {
       last.x = 0
     }
     if (last.x < 0) {
